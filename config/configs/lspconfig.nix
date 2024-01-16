@@ -33,6 +33,7 @@
         
         onAttach = {
           function = ''
+            function(_, bufnr)
                 local metals = require("metals")
                 local telescope = require("telescope")
 
@@ -58,6 +59,7 @@
 
 		mapB("n", "<leader>lc", vim.lsp.codelens.run, "LSP run code lens")
 		mapB("n", "<leader>la", vim.lsp.buf.code_action, "LSP code action")
+            end
           '';
         };
       };
