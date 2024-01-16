@@ -6,6 +6,7 @@
     ./configs/gitsigns.nix
     ./configs/lualine.nix
     ./configs/lspconfig.nix
+    ./configs/neorg.nix
     ./configs/noice.nix
     ./configs/notify.nix
     ./configs/nvim-cmp.nix
@@ -79,6 +80,7 @@
       }
       {
         plugin = pkgs.vimPlugins.nvim-metals;
+        config = ''lua require("metals").bare_config()'';
       }
     ];
 
@@ -149,6 +151,24 @@
         action = "<cmd>lua require('telescope').extensions.metals.commands<CR>";
         key = "<leader>mc";
         options = { desc = "Metals Commands"; };
+        mode = [ "n" ];
+      }
+      {
+        action = "<cmd>Neorg workspace work<CR>";
+        key = "<leader>nww";
+        options = { desc = "Neorg Worspace: Work"; };
+        mode = [ "n" ];
+      }
+      {
+        action = "<cmd>Neorg workspace personal<CR>";
+        key = "<leader>nwp";
+        options = { desc = "Neorg Worspace: Personal"; };
+        mode = [ "n" ];
+      }
+      {
+        action = "<cmd>Neorg return<CR>";
+        key = "<leader>nx";
+        options = { desc = "Neorg Worspace: Close Buffers"; };
         mode = [ "n" ];
       }
     ];
