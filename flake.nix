@@ -7,10 +7,14 @@
     };
     nixvim.url = "github:nix-community/nixvim";
     flake-parts.url = "github:hercules-ci/flake-parts";
+
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
-  outputs = { nixvim, flake-parts, ... }@inputs:
-    let config = import ./config; # import the module directly
+  outputs = { neovim-nightly-overlay, nixvim, flake-parts, ... }@inputs:
+    let 
+      config = import ./config;
+      overlays = [ neovim-nightly-overlay.overlay ];
     in flake-parts.lib.mkFlake { inherit inputs; } {
       systems =
         [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
@@ -28,6 +32,12 @@
             };
           };
         in {
+          _module.args.pkgs = import inputs.nixpkgs {
+            inherit system;
+
+            overlays = overlays;
+          };
+          
           checks = {
             # Run `nix flake check .` to verify that your config is not broken
             default = nixvimLib.check.mkTestDerivationFromNvim {
