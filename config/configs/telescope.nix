@@ -15,6 +15,13 @@
       fzf-native.enable = true;
     };
 
+    extraOptions = {
+      extraConfigLua = ''
+        local telescope = require("telescope")
+        telescope.load_extension("metals")
+      '';
+    };
+
     keymaps = {
       "<leader>sg" = {
         action = "live_grep";
