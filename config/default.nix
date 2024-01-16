@@ -1,11 +1,9 @@
 { pkgs, ... }: {
   # Import all your configuration modules here
   imports = [
-    # ./configs/bufferline.nix
     ./configs/conform.nix
     ./configs/dap.nix
     ./configs/gitsigns.nix
-    # ./configs/harpoon.nix
     ./configs/lualine.nix
     ./configs/lspconfig.nix
     ./configs/noice.nix
