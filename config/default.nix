@@ -50,6 +50,7 @@
 
         integrations = {
           cmp = true;
+          dap = true;
           gitsigns = true;
           treesitter = true;
           fidget = true;
@@ -71,6 +72,7 @@
       lsp-format.enable = true;
       luasnip = { enable = true; };
       treesitter = { enable = true; };
+      undotree.enable = true;
     };
 
     extraPlugins = [
