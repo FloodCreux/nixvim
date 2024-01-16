@@ -12,5 +12,8 @@
       nix = [ "nixfmt" ];
       yaml = [ "yamlfix" ];
     };
+    formatOnSave = {
+      lspFallback = true;
+    };
   };
 }
