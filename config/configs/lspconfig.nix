@@ -23,8 +23,8 @@
           settings = {
             showImplicitArguments = true;
               excludedPackages = [
-                      "akka.actor.typed.javadsl"
-                      "com.github.swagger.akka.javadsl"
+                "akka.actor.typed.javadsl"
+                "com.github.swagger.akka.javadsl"
               ];
               enableSemanticHighlighting = false;
               mavenScript = "mvn ch.epfl.scala:bloop-maven-plugin:2.0.0:bloopInstall";
