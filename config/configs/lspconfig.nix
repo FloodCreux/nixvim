@@ -32,6 +32,7 @@
         };
         
         onAttach = {
+	  override = true;
           function = ''
             function(_, bufnr)
                 local metals = require("metals")
