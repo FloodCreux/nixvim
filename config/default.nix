@@ -31,11 +31,12 @@
       wrap = false;
     };
 
+    clipboard.register = "unnamedplus";
+
     globals.mapleader = " ";
 
     extraConfigLua = ''
       vim.cmd("set colorcolumn=120")
-      vim.o[clipboard] = "unnamedplus"
       vim.opt.nu = true
     '';
 
@@ -71,10 +72,12 @@
       treesitter = { enable = true; };
     };
 
-    extraPlugins = [{
-      plugin = pkgs.vimPlugins.harpoon2;
-      config = ''lua require("harpoon"):setup()'';
-    }];
+    extraPlugins = [
+      {
+        plugin = pkgs.vimPlugins.harpoon2;
+        config = ''lua require("harpoon"):setup()'';
+      }
+    ];
 
     keymaps = [
       {
