@@ -91,6 +91,11 @@
         options = { desc = "Git UI"; };
       }
       {
+        action = "<cmd>Git push origin<CR>";
+        key = "<leader>gpp";
+        options = { desc = "Git Push Origin"; };
+      }
+      {
         action = ":m '>+1<CR>gv=gv";
         key = "J";
         mode = [ "v" ];
