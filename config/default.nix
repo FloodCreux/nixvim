@@ -153,12 +153,6 @@
         mode = [ "n" ];
       }
       {
-        action = "<cmd>lua require('telescope').extensions.metals.commands<CR>";
-        key = "<leader>mc";
-        options = { desc = "Metals Commands"; };
-        mode = [ "n" ];
-      }
-      {
         action = "<cmd>Neorg workspace work<CR>";
         key = "<leader>nww";
         options = { desc = "Neorg Worspace: Work"; };
