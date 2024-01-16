@@ -137,6 +137,12 @@
         options = { desc = "Harpoon Goto 4"; };
         mode = [ "n" ];
       }
+      {
+        action = "<cmd>lua require('telescope').extensions.metals.commands<CR>";
+        key = "<leader>mc";
+        options = { desc = "Metals Commands"; };
+        mode = [ "n" ];
+      }
     ];
   };
 }
