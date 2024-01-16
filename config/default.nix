@@ -50,7 +50,10 @@
 
         integrations = {
           cmp = true;
-          dap = true;
+          dap = {
+            enable_ui = true;
+            enabled = true;
+          };
           gitsigns = true;
           treesitter = true;
           fidget = true;
