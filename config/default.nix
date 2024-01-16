@@ -77,6 +77,9 @@
         plugin = pkgs.vimPlugins.harpoon2;
         config = ''lua require("harpoon"):setup()'';
       }
+      {
+        plugin = pkgs.vimPlugins.nvim-metals;
+      }
     ];
 
     keymaps = [
