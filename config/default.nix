@@ -81,11 +81,11 @@
     extraPlugins = [
       {
         plugin = pkgs.vimPlugins.harpoon2;
-        config = ''lua require("harpoon"):setup()'';
+        config = builtins.readFile ./configs/harpoon.vim;
       }
       {
         plugin = pkgs.vimPlugins.nvim-metals;
-        config = ''lua require("metals").bare_config()'';
+        config = builtins.readFile ./configs/metals.vim;
       }
     ];
 
@@ -114,43 +114,6 @@
         action = ":m '<-2<CR>gv=gv";
         key = "K";
         mode = [ "v" ];
-      }
-      {
-        action =
-          "<cmd>lua require('harpoon').ui:toggle_quick_menu(require('harpoon'):list())<CR>";
-        key = "<leader>hm";
-        options = { desc = "Harpoon Menu"; };
-        mode = [ "n" ];
-      }
-      {
-        action = "<cmd>lua require('harpoon'):list():append()<CR>";
-        key = "<leader>ha";
-        options = { desc = "Harpoon Add File"; };
-        mode = [ "n" ];
-      }
-      {
-        action = "<cmd>lua require('harpoon'):list():select(1)<CR>";
-        key = "<C-h>";
-        options = { desc = "Harpoon Goto 1"; };
-        mode = [ "n" ];
-      }
-      {
-        action = "<cmd>lua require('harpoon'):list():select(2)<CR>";
-        key = "<C-j>";
-        options = { desc = "Harpoon Goto 2"; };
-        mode = [ "n" ];
-      }
-      {
-        action = "<cmd>lua require('harpoon'):list():select(3)<CR>";
-        key = "<C-k>";
-        options = { desc = "Harpoon Goto 3"; };
-        mode = [ "n" ];
-      }
-      {
-        action = "<cmd>lua require('harpoon'):list():select(4)<CR>";
-        key = "<C-l>";
-        options = { desc = "Harpoon Goto 4"; };
-        mode = [ "n" ];
       }
       {
         action = "<cmd>Neorg workspace work<CR>";

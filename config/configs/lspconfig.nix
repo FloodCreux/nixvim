@@ -14,52 +14,52 @@
       metals = {
         enable = true;
 
-        extraOptions = {
-          tvp = { icons.enabled = true; };
-
-          settings = {
-            init_options.statusBarProvider = "on";
-            find_root_dir_max_project_nesting = 15;
-            showImplicitArguments = true;
-            excludedPackages =
-              [ "akka.actor.typed.javadsl" "com.github.swagger.akka.javadsl" ];
-            enableSemanticHighlighting = false;
-            mavenScript =
-              "mvn ch.epfl.scala:bloop-maven-plugin:2.0.0:bloopInstall";
-          };
-        };
-
-        onAttach = {
-          function = ''
-            local function mapB(mode, l, r, desc)
-              local opts = { noremap = true, silent = true, buffer = bufnr, desc = desc }
-              vim.keymap.set(mode, l, r, opts)
-            end
-
-            local metals = require("metals")
-            local telescope = require("telescope")
-
-            metals.setup_dap()
-            telescope.load_extension("metals")
-
-            vim.keymap.set("n", "<leader>mc", telescope.extensions.metals.commands, { desc = "Metals commands" })
-
-            mapB("v", "R", metals.type_of_range, "metals: type of range")
-
-            mapB("n", "<leader>mt", require("metals.tvp").toggle_tree_view, "Metals toggle tree view")
-            mapB("n", "<leader>mf", "<cmd>MetalsNewScalaFile<cr>", "Metals create new scala file")
-            mapB("n", "<leader>mr", require("metals.tvp").reveal_in_tree, "Metals reveal in tree")
-            mapB("n", "<leader>msi", function()
-                require("metals").toggle_setting("showImplicitArguments")
-                end, "Metals show implicit arguments")
-            mapB("n", "<leader>mss", function()
-                require("metals").toggle_setting("enableSemanticHighlighting")
-                end, "Metals show semantic highlights")
-
-            mapB("n", "<leader>lc", vim.lsp.codelens.run, "LSP run code lens")
-            mapB("n", "<leader>la", vim.lsp.buf.code_action, "LSP code action")
-          '';
-        };
+        # extraOptions = {
+        #   tvp = { icons.enabled = true; };
+        #
+        #   settings = {
+        #     init_options.statusBarProvider = "on";
+        #     find_root_dir_max_project_nesting = 15;
+        #     showImplicitArguments = true;
+        #     excludedPackages =
+        #       [ "akka.actor.typed.javadsl" "com.github.swagger.akka.javadsl" ];
+        #     enableSemanticHighlighting = false;
+        #     mavenScript =
+        #       "mvn ch.epfl.scala:bloop-maven-plugin:2.0.0:bloopInstall";
+        #   };
+        # };
+        #
+        # onAttach = {
+        #   function = ''
+        #     local function mapB(mode, l, r, desc)
+        #       local opts = { noremap = true, silent = true, buffer = bufnr, desc = desc }
+        #       vim.keymap.set(mode, l, r, opts)
+        #     end
+        #
+        #     local metals = require("metals")
+        #     local telescope = require("telescope")
+        #
+        #     metals.setup_dap()
+        #     telescope.load_extension("metals")
+        #
+        #     vim.keymap.set("n", "<leader>mc", telescope.extensions.metals.commands, { desc = "Metals commands" })
+        #
+        #     mapB("v", "R", metals.type_of_range, "metals: type of range")
+        #
+        #     mapB("n", "<leader>mt", require("metals.tvp").toggle_tree_view, "Metals toggle tree view")
+        #     mapB("n", "<leader>mf", "<cmd>MetalsNewScalaFile<cr>", "Metals create new scala file")
+        #     mapB("n", "<leader>mr", require("metals.tvp").reveal_in_tree, "Metals reveal in tree")
+        #     mapB("n", "<leader>msi", function()
+        #         require("metals").toggle_setting("showImplicitArguments")
+        #         end, "Metals show implicit arguments")
+        #     mapB("n", "<leader>mss", function()
+        #         require("metals").toggle_setting("enableSemanticHighlighting")
+        #         end, "Metals show semantic highlights")
+        #
+        #     mapB("n", "<leader>lc", vim.lsp.codelens.run, "LSP run code lens")
+        #     mapB("n", "<leader>la", vim.lsp.buf.code_action, "LSP code action")
+        #   '';
+        # };
       };
       # csharp-ls = {
       #   enable = true;
