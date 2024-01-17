@@ -23,9 +23,7 @@
           lib = import ./lib { inherit pkgs; };
           inherit (lib) metalsBuilder metalsOverlay;
 
-          neovimOverlay = f: p: {
-            neovim-nightly = inputs.neovim-nightly-overlay.overlay;
-          };
+          neovimOverlay = inputs.neovim-nightly-overlay.overlay;
 
           pkgs = import inputs.nixpkgs {
             inherit system;
@@ -36,7 +34,7 @@
           nixvimLib = nixvim.lib.${system};
           nixvim' = nixvim.legacyPackages.${system};
           nvim = nixvim'.makeNixvimWithModule {
-            inherit pkgs;
+            pkgs = pkgs;
             module = config;
             # You can use `extraSpecialArgs` to pass additional arguments to your module files
             extraSpecialArgs = {
