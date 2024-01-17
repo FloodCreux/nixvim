@@ -1,5 +1,4 @@
 { pkgs, ... }: {
-  # Import all your configuration modules here
   imports = [
     ./configs/conform.nix
     ./configs/dap.nix
@@ -30,6 +29,8 @@
       softtabstop = 2;
       termguicolors = true;
       wrap = false;
+
+      nu = true;
     };
 
     clipboard.register = "unnamedplus";
@@ -38,7 +39,6 @@
 
     extraConfigLua = ''
       vim.cmd("set colorcolumn=120")
-      vim.opt.nu = true
     '';
 
     colorschemes = {
@@ -171,8 +171,8 @@
         mode = [ "n" ];
       }
       {
-        action = "<cmd>vim.lsp.codelens.run<CR>";
-        key = "lc";
+        action = "<cmd>lua vim.lsp.codelens.run<CR>";
+        key = "<leader>lc";
         options = { desc = "CodeLens"; };
         mode = [ "n" ];
       }
