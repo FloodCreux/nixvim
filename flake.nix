@@ -2,9 +2,7 @@
   description = "A nixvim configuration";
 
   inputs = {
-    nixpkgs = {
-      url = "github:nixos/nixpkgs/nixos-unstable";
-    };
+    nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
     nixvim.url = "github:nix-community/nixvim";
     flake-parts.url = "github:hercules-ci/flake-parts";
 
@@ -12,14 +10,14 @@
   };
 
   outputs = { neovim-nightly-overlay, nixvim, flake-parts, ... }@inputs:
-    let 
+    let
       config = import ./config;
-      overlays = [ neovim-nightly-overlay.overlay ];
+      # overlays = [ neovim-nightly-overlay ];
     in flake-parts.lib.mkFlake { inherit inputs; } {
       systems =
         [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
 
-      perSystem = { pkgs, system, ... }:
+      perSystem = { system, ... }:
         let
           nixvimLib = nixvim.lib.${system};
           nixvim' = nixvim.legacyPackages.${system};
@@ -31,13 +29,27 @@
               # inherit (inputs) foo;
             };
           };
+
+          lib = import ./lib { inherit pkgs; };
+          inherit (lib) metalsBuilder metalsOverlay;
+
+          neovimOverlay = f: p: {
+            neovim-nightly =
+              inputs.neovim-nightly-overlay.packages.${system}.neovim;
+          };
+
+          pkgs = import inputs.nixpkgs {
+            inherit system;
+            config = { allowUnfree = true; };
+            overlays = [ neovimOverlay metalsOverlay ];
+          };
         in {
           _module.args.pkgs = import inputs.nixpkgs {
             inherit system;
 
-            overlays = overlays;
+            overlays.default = f: p: { inherit metalsBuilder; };
           };
-          
+
           checks = {
             # Run `nix flake check .` to verify that your config is not broken
             default = nixvimLib.check.mkTestDerivationFromNvim {
