@@ -19,16 +19,6 @@
 
       perSystem = { system, ... }:
         let
-          nixvimLib = nixvim.lib.${system};
-          nixvim' = nixvim.legacyPackages.${system};
-          nvim = nixvim'.makeNixvimWithModule {
-            inherit pkgs;
-            module = config;
-            # You can use `extraSpecialArgs` to pass additional arguments to your module files
-            extraSpecialArgs = {
-              # inherit (inputs) foo;
-            };
-          };
 
           lib = import ./lib { inherit pkgs; };
           inherit (lib) metalsBuilder metalsOverlay;
@@ -41,6 +31,17 @@
             inherit system;
             config = { allowUnfree = true; };
             overlays = [ neovimOverlay metalsOverlay ];
+          };
+
+          nixvimLib = nixvim.lib.${system};
+          nixvim' = nixvim.legacyPackages.${system};
+          nvim = nixvim'.makeNixvimWithModule {
+            inherit pkgs;
+            module = config;
+            # You can use `extraSpecialArgs` to pass additional arguments to your module files
+            extraSpecialArgs = {
+              # inherit (inputs) foo;
+            };
           };
         in {
           _module.args.pkgs = import inputs.nixpkgs {
