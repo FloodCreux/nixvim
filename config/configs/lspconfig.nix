@@ -48,6 +48,7 @@
         "gi" = "implementation";
         "gt" = "type_definition";
         "fm" = "format";
+        "la" = "code_action";
       };
     };
   };

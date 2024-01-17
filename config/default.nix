@@ -170,6 +170,12 @@
         options = { desc = "Neorg Worspace: Close Buffers"; };
         mode = [ "n" ];
       }
+      {
+        action = "<cmd>vim.lsp.codelens.run<CR>";
+        key = "lc";
+        options = { desc = "CodeLens"; };
+        mode = [ "n" ];
+      }
     ];
   };
 }

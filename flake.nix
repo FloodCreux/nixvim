@@ -34,8 +34,7 @@
           inherit (lib) metalsBuilder metalsOverlay;
 
           neovimOverlay = f: p: {
-            neovim-nightly =
-              inputs.neovim-nightly-overlay.packages.${system}.neovim;
+            neovim-nightly = inputs.neovim-nightly-overlay.overlay;
           };
 
           pkgs = import inputs.nixpkgs {
