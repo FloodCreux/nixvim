@@ -13,18 +13,14 @@
       "<CR>" = "cmp.mapping.confirm({ select = true })";
       "<S-Tab>" = {
         action = "cmp.mapping.select_prev_item()";
-        modes = [
-          "i"
-          "s"
-        ];
+        modes = [ "i" "s" ];
       };
       "<Tab>" = {
         action = "cmp.mapping.select_next_item()";
-        modes = [
-          "i"
-          "s"
-        ];
+        modes = [ "i" "s" ];
       };
     };
+
+    snippet.expand = "luasnip";
   };
 }
