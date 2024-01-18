@@ -4,7 +4,6 @@
     ./configs/dap.nix
     ./configs/gitsigns.nix
     ./configs/lualine.nix
-    ./configs/lspconfig.nix
     ./configs/neorg.nix
     ./configs/noice.nix
     ./configs/notify.nix
@@ -76,6 +75,49 @@
       luasnip = { enable = true; };
       treesitter = { enable = true; };
       undotree.enable = true;
+      indent-blankline.enable = true;
+
+      lsp = {
+        enable = true;
+        capabilities = ''require("cmp_nvim_lsp").default_capabilities()'';
+        servers = {
+          clangd.enable = true;
+          lua-ls.enable = true;
+          rust-analyzer = {
+            enable = true;
+            installCargo = true;
+            installRustc = true;
+          };
+          nil_ls.enable = true;
+          metals = {
+            enable = true;
+            package = pkgs.metals;
+          };
+          # csharp-ls = {
+          #   enable = true;
+          # };
+          omnisharp = { enable = true; };
+          yamlls.enable = true;
+        };
+
+        keymaps = {
+          diagnostic = {
+            "<leader>dj" = "goto_next";
+            "<leader>dk" = "goto_prev";
+          };
+
+          lspBuf = {
+            "K" = "hover";
+            "gD" = "references";
+            "gd" = "definition";
+            "gi" = "implementation";
+            "gt" = "type_definition";
+            "fm" = "format";
+            "la" = "code_action";
+          };
+        };
+      };
+
     };
 
     extraPlugins = [
@@ -86,6 +128,12 @@
       {
         plugin = pkgs.vimPlugins.nvim-metals;
         config = builtins.readFile ./configs/metals.vim;
+      }
+      { plugin = pkgs.vimPlugins.vim-dadbod; }
+      { plugin = pkgs.vimPlugins.vim-dadbod-ui; }
+      {
+        plugin = pkgs.vimPlugins.vim-dadbod-completion;
+        config = builtins.readFile ./configs/dadbod.vim;
       }
     ];
 
