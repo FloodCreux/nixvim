@@ -29,16 +29,22 @@
       termguicolors = true;
       wrap = false;
 
+      swapfile = false;
+      backup = false;
+
+      undofile = true;
+
+      updatetime = 50;
+
+      guicursor = "";
+
       nu = true;
+      colorcolumn = "120";
     };
 
     clipboard.register = "unnamedplus";
 
     globals.mapleader = " ";
-
-    extraConfigLua = ''
-      vim.cmd("set colorcolumn=120")
-    '';
 
     colorschemes = {
       catppuccin = {

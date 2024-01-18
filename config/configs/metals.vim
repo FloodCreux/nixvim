@@ -92,30 +92,4 @@ vim.api.nvim_create_autocmd("FileType", {
   group = nvim_metals_group,
 })
 
-dap.configurations.scala = {
-  {
-    type = "scala",
-    request = "launch",
-    name = "RunOrTest",
-    metals = {
-      runType = "runOrTestFile",
-    },
-  },
-  {
-    type = "scala",
-    request = "launch",
-    name = "Test Target",
-    metals = {
-      runType = "testTarget",
-    },
-  },
-  {
-    type = "scala",
-    request = "launch",
-    name = "Test Case",
-    metals = {
-      runType = "testCase",
-    },
-  },
-}
 EOF
