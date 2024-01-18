@@ -133,7 +133,7 @@
       { plugin = pkgs.vimPlugins.vim-dadbod-ui; }
       {
         plugin = pkgs.vimPlugins.vim-dadbod-completion;
-        config = builtins.readFile ./configs/dadbod.vim;
+        # config = builtins.readFile ./configs/dadbod.vim;
       }
     ];
 
