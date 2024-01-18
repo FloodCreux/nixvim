@@ -10,9 +10,7 @@
   };
 
   outputs = { neovim-nightly-overlay, nixvim, flake-parts, ... }@inputs:
-    let
-      config = import ./config;
-      # overlays = [ neovim-nightly-overlay ];
+    let config = import ./config;
     in flake-parts.lib.mkFlake { inherit inputs; } {
       systems =
         [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
@@ -27,7 +25,10 @@
 
           pkgs = import inputs.nixpkgs {
             inherit system;
-            config = { allowUnfree = true; };
+            config = {
+              allowUnfree = true;
+              allowUnsupportedSystem = true;
+            };
             overlays = [ neovimOverlay metalsOverlay ];
           };
 

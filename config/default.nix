@@ -93,9 +93,7 @@
             enable = true;
             package = pkgs.metals;
           };
-          # csharp-ls = {
-          #   enable = true;
-          # };
+          csharp-ls = { enable = true; };
           omnisharp = { enable = true; };
           yamlls.enable = true;
         };
