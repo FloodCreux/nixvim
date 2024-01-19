@@ -3,11 +3,9 @@
     enable = true;
 
     defaults = {
-      file_ignore_patterns = [
-	"node_modules/.*"
-	"%.pem"
-	".git/.*"
-      ];
+      file_ignore_patterns = [ "node_modules/.*" "%.pem" ".git/.*" ];
+
+      hidden_files = true;
     };
 
     extensions = {
@@ -32,16 +30,16 @@
         desc = "Find Files";
       };
       "<leader><space>" = {
-	action = "buffers";
-	desc = "Find Buffers";
+        action = "buffers";
+        desc = "Find Buffers";
       };
       "<leader>sh>" = {
-	action = "help_tags";
-	desc = "Search Help";
+        action = "help_tags";
+        desc = "Search Help";
       };
       "<leader>sw" = {
-	action = "grep_string";
-	desc = "Search Current Word";
+        action = "grep_string";
+        desc = "Search Current Word";
       };
     };
   };
