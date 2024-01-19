@@ -83,6 +83,26 @@
       undotree.enable = true;
       indent-blankline.enable = true;
 
+      # harpoon = {
+      #   enable = true;
+      #
+      #   package = pkgs.vimPlugins.harpoon2;
+      #
+      #   enableTelescope = true;
+      #   markBranch = true;
+      #
+      #   keymaps = {
+      #     addFile = "<leader>ha";
+      #     toggleQuickMenu = "<leader>hm";
+      #     navFile = {
+      #       "1" = "<C-h>";
+      #       "2" = "<C-j>";
+      #       "3" = "<C-k>";
+      #       "4" = "<C-l>";
+      #     };
+      #   };
+      # };
+
       lsp = {
         enable = true;
         capabilities = ''require("cmp_nvim_lsp").default_capabilities()'';
