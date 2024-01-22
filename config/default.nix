@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   imports = [
     ./configs/conform.nix
+    ./configs/copilot-lua.nix
     ./configs/dap.nix
     ./configs/gitsigns.nix
     ./configs/lualine.nix
@@ -82,6 +83,7 @@
       treesitter = { enable = true; };
       undotree.enable = true;
       indent-blankline.enable = true;
+      # copilot-cmp.enable = true;
 
       lsp = {
         enable = true;
