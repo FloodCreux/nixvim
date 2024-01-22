@@ -144,6 +144,7 @@
         plugin = pkgs.vimPlugins.vim-dadbod-completion;
         # config = builtins.readFile ./configs/dadbod.vim;
       }
+      { plugin = pkgs.vimPlugins.lazygit-nvim; }
     ];
 
     keymaps = [
@@ -194,6 +195,12 @@
         action = "<cmd>lua vim.lsp.codelens.run<CR>";
         key = "<leader>lc";
         options = { desc = "CodeLens"; };
+        mode = [ "n" ];
+      }
+      {
+        action = "<cmd>LazyGit<CR>";
+        key = "<leader>gg";
+        options = { desc = "LazyGit UI"; };
         mode = [ "n" ];
       }
     ];
