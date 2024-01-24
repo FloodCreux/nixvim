@@ -31,16 +31,6 @@
           type = "scala";
           metals = { runType = "testTarget"; };
         }
-        # {
-        #   name = "Test Target";
-        #   request = "launch";
-        #   type = "scala";
-        # }
-        # {
-        #   name = "Test Case";
-        #   request = "launch";
-        #   type = "scala";
-        # }
       ];
     };
     extensions = {
