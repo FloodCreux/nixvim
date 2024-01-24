@@ -205,6 +205,54 @@
         options = { desc = "LazyGit UI"; };
         mode = [ "n" ];
       }
+      {
+        action = "function() require('dap').continue() end";
+        lua = true;
+        key = "<leader>dc";
+        options = { desc = "Dap Start/Continue"; };
+        mode = [ "n" ];
+      }
+      {
+        action = "function() require('dap').repl.open() end";
+        lua = true;
+        key = "<leader>dr";
+        options = { desc = "Dap Toggle Repl"; };
+        mode = [ "n" ];
+      }
+      {
+        action = "function() require('dap.ui.widgets').hover() end";
+        lua = true;
+        key = "<leader>dK";
+        options = { desc = "Dap UI Hover"; };
+        mode = [ "n" ];
+      }
+      {
+        action = "function() require('dap').toggle_breakpoint() end";
+        lua = true;
+        key = "<leader>dt";
+        options = { desc = "Dap Toggle Breakpoint"; };
+        mode = [ "n" ];
+      }
+      {
+        action = "function() require('dap').step_over() end";
+        lua = true;
+        key = "<leader>dso";
+        options = { desc = "Dap Step Over"; };
+        mode = [ "n" ];
+      }
+      {
+        action = "function() require('dap').step_into() end";
+        key = "<leader>dsi";
+        options = { desc = "Dap Step Into"; };
+        mode = [ "n" ];
+      }
+      {
+        action = "function() require('dap').run_last() end";
+        lua = true;
+        key = "<leader>dl";
+        options = { desc = "Dap Run Last"; };
+        mode = [ "n" ];
+      }
     ];
   };
 }
