@@ -84,6 +84,7 @@
       undotree.enable = true;
       indent-blankline.enable = true;
       # copilot-cmp.enable = true;
+      toggleterm.enable = true;
 
       lsp = {
         enable = true;

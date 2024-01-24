@@ -104,5 +104,17 @@
     options = { desc = "Dap Run Last"; };
     mode = [ "n" ];
   }
+  {
+    action = "<cmd>ToggleTerm<CR>";
+    key = "<leader>tt";
+    options = { desc = "Terminal"; };
+    mode = [ "n" ];
+  }
+  {
+    action = "<cmd>ToggleTerm direction=float<CR>";
+    key = "<leader>tf";
+    options = { desc = "Terminal Float"; };
+    mode = [ "n" ];
+  }
 ]
 
