@@ -18,23 +18,22 @@
       };
     };
     configurations = {
-      # scala = [
-      #   {
-      #     name = "RunOrTest";
-      #     request = "launch";
-      #     type = "scala";
-      #   }
-      #   {
-      #     name = "Test Target";
-      #     request = "launch";
-      #     type = "scala";
-      #   }
-      #   {
-      #     name = "Test Case";
-      #     request = "launch";
-      #     type = "scala";
-      #   }
-      # ];
+      scala = [{
+        name = "RunOrTest";
+        request = "launch";
+        type = "scala";
+      }
+      # {
+      #   name = "Test Target";
+      #   request = "launch";
+      #   type = "scala";
+      # }
+      # {
+      #   name = "Test Case";
+      #   request = "launch";
+      #   type = "scala";
+      # }
+        ];
     };
     extensions = {
       dap-ui = {
