@@ -145,6 +145,10 @@
         # config = builtins.readFile ./configs/dadbod.vim;
       }
       { plugin = pkgs.vimPlugins.lazygit-nvim; }
+      {
+        plugin = pkgs.vimPlugins.nvim-dap-ui;
+        config = builtins.readFile ./configs/dap-ui.vim;
+      }
     ];
 
     keymaps = [
@@ -229,7 +233,7 @@
       {
         action = "function() require('dap').toggle_breakpoint() end";
         lua = true;
-        key = "<leader>dt";
+        key = "<leader>bb";
         options = { desc = "Dap Toggle Breakpoint"; };
         mode = [ "n" ];
       }
