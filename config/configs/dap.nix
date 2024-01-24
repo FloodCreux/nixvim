@@ -40,7 +40,7 @@
       dap-ui = {
         enable = true;
         controls = {
-          enable = true;
+          enabled = true;
           icons = {
             pause = "⏸";
             play = "▶";
