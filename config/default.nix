@@ -167,11 +167,13 @@
         action = ":m '>+1<CR>gv=gv";
         key = "J";
         mode = [ "v" ];
+        options = { silent = true; };
       }
       {
         action = ":m '<-2<CR>gv=gv";
         key = "K";
         mode = [ "v" ];
+        options = { silent = true; };
       }
       {
         action = "<cmd>Neorg workspace work<CR>";
