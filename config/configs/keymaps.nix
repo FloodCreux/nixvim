@@ -104,5 +104,5 @@
     options = { desc = "Dap Run Last"; };
     mode = [ "n" ];
   }
-];
+]
 

@@ -151,6 +151,6 @@
       }
     ];
 
-    keymaps = builtins.readFile ./configs/keymaps.nix;
+    keymaps = import ./configs/keymaps.nix;
   };
 }
