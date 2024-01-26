@@ -36,13 +36,17 @@ end, { desc = "Harpoon Goto 1" })
 
 vim.keymap.set("n", "<C-j>", function()
   harpoon:list():select(2)
-end)
+end, { desc = "Harpoon Goto 2" })
 vim.keymap.set("n", "<C-k>", function()
   harpoon:list():select(3)
-end)
+end, { desc = "Harpoon Goto 3" })
 vim.keymap.set("n", "<C-l>", function()
   harpoon:list():select(4)
-end)
+end, { desc = "Harpoon Goto 4" })
+
+vim.keymap.set("n", "<C-x>", function()
+  harpoon:list():clear()
+end, { desc = "Harpoon clear list" })
 
 -- Toggle previous & next buffers stored within Harpoon list
 -- Toggle previous & next buffers stored within Harpoon list
