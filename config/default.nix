@@ -9,6 +9,7 @@
     ./configs/noice.nix
     ./configs/notify.nix
     ./configs/nvim-cmp.nix
+    ./configs/obsidian.nix
     ./configs/telescope.nix
     ./configs/which-key.nix
   ];
@@ -123,7 +124,7 @@
             "gi" = "implementation";
             "gt" = "type_definition";
             "fm" = "format";
-            "la" = "code_action";
+            "<leader>la" = "code_action";
           };
         };
       };
