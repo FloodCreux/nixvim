@@ -1,6 +1,7 @@
 [
   {
-    action = "<cmd>Explore<CR>";
+    # action = "<cmd>Explore<CR>";
+    action = "<cmd>Oil<CR>";
     key = "<leader>pv";
     options = { desc = "Explore"; };
   }

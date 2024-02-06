@@ -10,6 +10,7 @@
     ./configs/notify.nix
     ./configs/nvim-cmp.nix
     ./configs/obsidian.nix
+    ./configs/oil.nix
     ./configs/telescope.nix
     ./configs/which-key.nix
   ];
