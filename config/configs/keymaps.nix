@@ -118,7 +118,7 @@
     mode = [ "n" ];
   }
   {
-    action = "<cmd>silent !tmux neww tmux-sessionizer<CR>";
+    action = "<cmd>silent !tmux neww ~/.local/scripts/tmux-sessionizer<CR>";
     key = "<C-f>";
     mode = [ "n" ];
   }
