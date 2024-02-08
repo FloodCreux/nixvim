@@ -117,5 +117,10 @@
     options = { desc = "Terminal Float"; };
     mode = [ "n" ];
   }
+  {
+    action = "<cmd>silent !tmux neww tmux-sessionizer<CR>";
+    key = "<C-f>";
+    mode = [ "n" ];
+  }
 ]
 
