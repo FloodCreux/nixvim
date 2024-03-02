@@ -105,12 +105,16 @@
             enable = true;
             package = pkgs.metals;
           };
-          csharp-ls = { enable = true; };
+          # csharp-ls = { enable = true; };
           omnisharp = { enable = true; };
           yamlls.enable = true;
           terraformls.enable = true;
           pyright.enable = true;
           dockerls.enable = true;
+          marksman = {
+            enable = true;
+            autostart = true;
+          };
         };
 
         keymaps = {
