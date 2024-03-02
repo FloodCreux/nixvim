@@ -100,6 +100,7 @@
             installCargo = true;
             installRustc = true;
           };
+          gopls.enable = true;
           nil_ls.enable = true;
           metals = {
             enable = true;
