@@ -21,7 +21,8 @@ metals_config.settings = {
     "com.github.swagger.akka.javadsl",
   },
   enableSemanticHighlighting = false,
-  mavenScript = "mvn ch.epfl.scala:bloop-maven-plugin:2.0.0:bloopInstall",
+  mavenScript = "mvn",
+  scalafmtConfigPath = "./.scalafmt.conf",
 }
 
 local capabilities = cmp_lsp.default_capabilities()
