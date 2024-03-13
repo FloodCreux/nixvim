@@ -4,8 +4,6 @@
 
     defaults = {
       file_ignore_patterns = [ "node_modules/.*" "%.pem" ".git/.*" ];
-
-      hidden_files = true;
     };
 
     extensions = {
@@ -33,13 +31,17 @@
         action = "buffers";
         desc = "Find Buffers";
       };
-      "<leader>sh>" = {
+      "<leader>sh" = {
         action = "help_tags";
         desc = "Search Help";
       };
       "<leader>sw" = {
         action = "grep_string";
         desc = "Search Current Word";
+      };
+      "<leader>sgg" = {
+        action = "git_files";
+        desc = "Search Git Files";
       };
     };
   };
