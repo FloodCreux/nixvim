@@ -88,7 +88,6 @@
       # copilot-cmp.enable = true;
       toggleterm.enable = true;
       trouble.enable = true;
-      rainbow-delimiters.enable = true;
 
       lsp = {
         enable = true;
