@@ -102,6 +102,7 @@
           };
           gopls.enable = true;
           nil_ls.enable = true;
+          java-language-server.enable = true;
           metals = {
             enable = true;
             package = pkgs.metals;
