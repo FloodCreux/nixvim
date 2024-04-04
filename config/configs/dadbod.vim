@@ -1,4 +1,5 @@
-:lua << EOF
+lua << EOF
+
 local function db_completion()
   require('cmp').setup.buffer { sources = { { name = 'vim-dadbod-completion' } } }
 end
@@ -23,4 +24,5 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.schedule(db_completion)
   end,
 })
+
 EOF

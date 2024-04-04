@@ -89,6 +89,11 @@
       toggleterm.enable = true;
       trouble.enable = true;
 
+      nvim-jdtls = {
+        enable = true;
+        data = "./.cache/jdtls/workspace";
+      };
+
       lsp = {
         enable = true;
         capabilities = ''require("cmp_nvim_lsp").default_capabilities()'';
@@ -102,7 +107,7 @@
           };
           gopls.enable = true;
           nil_ls.enable = true;
-          java-language-server.enable = true;
+          # java-language-server.enable = true;
           metals = {
             enable = true;
             package = pkgs.metals;
@@ -148,12 +153,12 @@
         plugin = pkgs.vimPlugins.nvim-metals;
         config = builtins.readFile ./configs/metals.vim;
       }
-      { plugin = pkgs.vimPlugins.vim-dadbod; }
-      { plugin = pkgs.vimPlugins.vim-dadbod-ui; }
       {
-        plugin = pkgs.vimPlugins.vim-dadbod-completion;
+        plugin = pkgs.vimPlugins.vim-dadbod;
         # config = builtins.readFile ./configs/dadbod.vim;
       }
+      { plugin = pkgs.vimPlugins.vim-dadbod-ui; }
+      { plugin = pkgs.vimPlugins.vim-dadbod-completion; }
       { plugin = pkgs.vimPlugins.lazygit-nvim; }
       {
         plugin = pkgs.vimPlugins.nvim-dap-ui;
